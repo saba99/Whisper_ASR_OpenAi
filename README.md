@@ -7,7 +7,6 @@
 
 This repository refines the timestamps of openAI's Whisper model via forced aligment with phoneme-based ASR models (e.g. wav2vec2.0), multilingual use-case.
 
-<h2 align="left" id="setup">Setup ⚙️</h2>
 Install this package using
 
 `pip install git+https://github.com/m-bain/whisperx.git`
@@ -21,12 +20,6 @@ If wishing to modify this package, clone and install in editable mode:
 $ git clone https://github.com/m-bain/whisperX.git
 $ cd whisperX
 $ pip install -e .
-```
-
-
-You may also need to install ffmpeg, rust etc. Follow openAI instructions here https://github.com/openai/whisper#setup.
-
-<h2 align="left" id="example">Usage 💬 (command line)</h2>
 
 ### English
 
