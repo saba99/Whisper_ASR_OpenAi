@@ -7,20 +7,6 @@
 
 This repository refines the timestamps of openAI's Whisper model via forced aligment with phoneme-based ASR models (e.g. wav2vec2.0), multilingual use-case.
 
-
-**Whisper** is an ASR model [developed by OpenAI](https://github.com/openai/whisper), trained on a large dataset of diverse audio. Whilst it does produces highly accurate transcriptions, the corresponding timestamps are at the utterance-level, not per word, and can be inaccurate by several seconds.
-
-**Phoneme-Based ASR** A suite of models finetuned to recognise the smallest unit of speech distinguishing one word from another, e.g. the element p in "tap". A popular example model is [wav2vec2.0](https://huggingface.co/facebook/wav2vec2-large-960h-lv60-self).
-
-**Forced Alignment** refers to the process by which orthographic transcriptions are aligned to audio recordings to automatically generate phone level segmentation.
-
-<h2 align="left", id="highlights">New🚨</h2>
-
-- VAD filtering: Voice Activity Detection (VAD) from [Pyannote.audio](https://huggingface.co/pyannote/voice-activity-detection) is used as a preprocessing step to remove reliance on whisper timestamps and only transcribe audio segments containing speech. add `--vad_filter` flag, increases timestamp accuracy and robustness (requires more GPU mem due to 30s inputs in wav2vec2)
-- Character level timestamps (see `*.char.ass` file output)
-- Diarization (still in beta, add `--diarization`)
-
-
 <h2 align="left" id="setup">Setup ⚙️</h2>
 Install this package using
 
@@ -73,30 +59,5 @@ Currently default models provided for `{en, fr, de, es, it, ja, zh, nl, uk, pt}`
     whisperx --model large --language de examples/sample_de_01.wav
 
 https://user-images.githubusercontent.com/36994049/208298811-e36002ba-3698-4731-97d4-0aebd07e0eb3.mov
-
-
-## Python usage  🐍
-
-```python
-import whisperx
-
-device = "cuda" 
-audio_file = "audio.mp3"
-
-# transcribe with original whisper
-model = whisperx.load_model("large", device)
-result = model.transcribe(audio_file)
-
-print(result["segments"]) # before alignment
-
-# load alignment model and metadata
-model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
-
-# align whisper output
-result_aligned = whisperx.align(result["segments"], model_a, metadata, audio_file, device)
-
-print(result_aligned["segments"]) # after alignment
-print(result_aligned["word_segments"]) # after alignment
-```
 
 
