@@ -5,8 +5,6 @@
 </p>
 
 
-<h2 align="left", id="what-is-it">What is it 🔎</h2>
-
 This repository refines the timestamps of openAI's Whisper model via forced aligment with phoneme-based ASR models (e.g. wav2vec2.0), multilingual use-case.
 
 
@@ -127,67 +125,3 @@ If you are multilingual, a major way you can contribute to this project is to fi
 
 The next major upgrade we are working on is whisper with speaker diarization, so if you have any experience on this please share.
 
-<h2 align="left" id="coming-soon">Coming Soon 🗓</h2>
-
-[x] ~~Multilingual init~~ done
-
-[x] ~~Subtitle .ass output~~ done
-
-[x] ~~Automatic align model selection based on language detection~~ done
-
-[x] ~~Python usage~~ done
-
-[x] ~~Character level timestamps~~
-
-[x] ~~Incorporating  speaker diarization~~
-
-[ ] Improve diarization (word level)
-
-[ ] Inference speedup with batch processing
-
-<h2 align="left" id="contact">Contact 📇</h2>
-
-Contact maxbain[at]robots[dot]ox[dot]ac[dot]uk for business things.
-
-<h2 align="left" id="acks">Acknowledgements 🙏</h2>
-
-Of course, this is mostly just a modification to [openAI's whisper](https://github.com/openai/whisper).
-As well as accreditation to this [PyTorch tutorial on forced alignment](https://pytorch.org/tutorials/intermediate/forced_alignment_with_torchaudio_tutorial.html)
-
-
-<h2 align="left" id="cite">Citation</h2>
-If you use this in your research, just cite the repo,
-
-```bibtex
-@misc{bain2022whisperx,
-  author = {Bain, Max},
-  title = {WhisperX},
-  year = {2022},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/m-bain/whisperX}},
-}
-```
-
-as well as the whisper paper,
-
-```bibtex
-@article{radford2022robust,
-  title={Robust speech recognition via large-scale weak supervision},
-  author={Radford, Alec and Kim, Jong Wook and Xu, Tao and Brockman, Greg and McLeavey, Christine and Sutskever, Ilya},
-  journal={arXiv preprint arXiv:2212.04356},
-  year={2022}
-}
-```
-and any alignment model used, e.g. wav2vec2.0.
-
-```bibtex
-@article{baevski2020wav2vec,
-  title={wav2vec 2.0: A framework for self-supervised learning of speech representations},
-  author={Baevski, Alexei and Zhou, Yuhao and Mohamed, Abdelrahman and Auli, Michael},
-  journal={Advances in Neural Information Processing Systems},
-  volume={33},
-  pages={12449--12460},
-  year={2020}
-}
-```
