@@ -4,18 +4,13 @@
 
 </p>
 
-This repository refines the timestamps of openAI's Whisper model via forced aligment with phoneme-based ASR models (e.g. wav2vec2.0), multilingual use-case.
+Final Project of Speech Recognition university Course - Winter 2023 -Dr koochari
+
+Author(Modified Source Code): Saba Hesaraki
+
+
 
 ### English
-
-Run whisper on example segment (using default params)
-
-    whisperx examples/sample01.wav
-
-
-For increased timestamp accuracy, at the cost of higher gpu mem, use bigger models and VAD filtering e.g.
-
-    whisperx examples/sample01.wav --model large.en --vad_filter --align_model WAV2VEC2_ASR_LARGE_LV60K_960H
 
 Result using *WhisperX* with forced alignment to wav2vec2.0 large:
 
