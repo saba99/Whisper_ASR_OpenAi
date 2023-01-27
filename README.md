@@ -21,8 +21,8 @@ Compare this to original whisper out the box, where many transcriptions are out 
 https://user-images.githubusercontent.com/36994049/207743923-b4f0d537-29ae-4be2-b404-bb941db73652.mov
 
 
-#### E.g. German
-    whisperx --model large --language de examples/sample_de_01.wav
+#### German
+   
 
 https://user-images.githubusercontent.com/36994049/208298811-e36002ba-3698-4731-97d4-0aebd07e0eb3.mov
 
