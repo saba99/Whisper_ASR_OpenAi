@@ -75,8 +75,6 @@ Currently default models provided for `{en, fr, de, es, it, ja, zh, nl, uk, pt}`
 https://user-images.githubusercontent.com/36994049/208298811-e36002ba-3698-4731-97d4-0aebd07e0eb3.mov
 
 
-See more examples in other languages [here](EXAMPLES.md).
-
 ## Python usage  🐍
 
 ```python
@@ -101,27 +99,4 @@ print(result_aligned["segments"]) # after alignment
 print(result_aligned["word_segments"]) # after alignment
 ```
 
-
-<h2 align="left" id="whisper-mod">Whisper Modifications</h2>
-
-In addition to forced alignment, the following two modifications have been made to the whisper transcription method:
-
-1. `--condition_on_prev_text` is set to `False` by default (reduces hallucination)
-
-2. Clamping segment `end_time` to be at least 0.02s (one time precision) later than `start_time` (prevents segments with negative duration)
-
-
-<h2 align="left" id="limitations">Limitations ⚠️</h2>
-
-- Not thoroughly tested, especially for non-english, results may vary -- please post issue to let me know the results on your data
-- Whisper normalises spoken numbers e.g. "fifty seven" to arabic numerals "57". Need to perform this normalization after alignment, so the phonemes can be aligned. Currently just ignores numbers.
-- Assumes the initial whisper timestamps are accurate to some degree (within margin of 2 seconds, adjust if needed -- bigger margins more prone to alignment errors)
-- Hacked this up quite quickly, there might be some errors, please raise an issue if you encounter any.
-
-
-<h2 align="left" id="contribute">Contribute 🧑‍🏫</h2>
-
-If you are multilingual, a major way you can contribute to this project is to find phoneme models on huggingface (or train your own) and test them on speech for the target language. If the results look good send a merge request and some examples showing its success.
-
-The next major upgrade we are working on is whisper with speaker diarization, so if you have any experience on this please share.
 
